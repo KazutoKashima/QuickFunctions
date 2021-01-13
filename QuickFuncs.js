@@ -1,6 +1,6 @@
 class QuickFunctions {
     constructor() {
-        throw new Error("PersonalFunctions is not a constructor");
+        throw new Error("QuickFunctions is not a constructor");
     }
 
     /**
@@ -8,7 +8,7 @@ class QuickFunctions {
      * @param {string} mention 
      */
     static async getUserFromMention(mention) {
-        const matches = mention.match(/^<@!?(\d+)>$/);
+        const matches = mention.match(/^<@!?(\d+)>$/); // reads as: <@!someID>
     
         if (!matches) return console.log("No mention matches found...");
     
