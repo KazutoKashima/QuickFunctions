@@ -46,7 +46,7 @@ class QuickFunctions {
      * @param {string} command 
      * @param {int} time 
      */
-    static async commandTimeout(command, time) {
+    static async setCommandTimeout(command, time) {
         if (!command) throw new Error("No Command specified");
         if (!time) throw new Error("No time specified");
         if (isNaN(time)) throw new Error("Time has to be a number");
@@ -63,6 +63,18 @@ class QuickFunctions {
         if(!command) throw new Error("No command specified");
 
         if (command) return clearTimeout(command);
+    }
+
+    static async currentTime() {
+        var currentdate = new Date(); 
+        var datetime = "Current Time: " + currentdate.getDate() + "/"
+                        + (currentdate.getMonth()+1)  + "/" 
+                        + currentdate.getFullYear() + " @ "  
+                        + currentdate.getHours() + ":"  
+                        + currentdate.getMinutes() + ":" 
+                        + currentdate.getSeconds();
+        
+        return datetime;
     }
 }
 
