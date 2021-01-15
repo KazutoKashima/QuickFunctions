@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 class QuickFunctions {
     constructor() {
         throw new Error("QuickFunctions is not a constructor");
@@ -65,6 +67,9 @@ class QuickFunctions {
         if (command) return clearTimeout(command);
     }
 
+    /**
+     * obtain current time
+     */
     static async currentTime() {
         var currentdate = new Date(); 
         var datetime = "Current Time: " + currentdate.getDate() + "/"
@@ -75,6 +80,56 @@ class QuickFunctions {
                         + currentdate.getSeconds();
         
         return datetime;
+    }
+
+    /**
+     * convert an image to an Array Buffer
+     * @param {string} image 
+     */
+    static async imgToArrayBuffer(image) {
+        if (!image) throw new Error("An Image needs to be specified ")
+
+        try {
+                fs.readFile(image, (err, data) => {
+                    if (err) return console.error(err);
+                    const buffer = Buffer.from(data);
+                    const arr = [...buffer];
+
+                    console.log(arr);
+                });
+            } catch (error) {
+                throw new Error("Unexpected error occurred: \n" + error);
+            }
+    }
+
+    /**
+     * convert an Array Buffer to an Image
+     * @param {string} arrayBuffer 
+     */
+    static async arrayBufferToImg(arrayBuffer) {
+        if (!arrayBuffer) throw new Error("A buffer array is needed to convert to an image");
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.open("GET", arrayBuffer, true);
+
+        xhr.responseType = "arrayBuffer";
+
+        xhr.onload = function(e) {
+            try {
+                // obtain the data blob: URL for img
+                var arrBuffView = new Uint8Array( this.respose );
+                var blob = new Blob([ arrBuffView ], { type: "image/jpeg"});
+                var urlCreator = window.URL || window.webkitURL;
+                var imageUrl = urlCreator.createObjectURL(blob);
+                var img = document.querySelector("#photo");
+                img.src = imageUrl;
+            } catch (error) {
+                throw new Error("Unexpected error occurred: \n" + error);
+            }
+        }
+
+        xhr.send();
     }
 }
 
