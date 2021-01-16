@@ -134,4 +134,4 @@ class QuickFunctions {
 }
 
 
-module.exports = PersonalFunctions;
+module.exports = QuickFunctions;
