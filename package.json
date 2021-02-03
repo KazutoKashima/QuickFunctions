@@ -1,0 +1,23 @@
+{
+  "name": "quickfunctions",
+  "description": "A Node.JS module designed to make development more fluid and less recurisive",
+  "version": "1.0.3",
+  "main": "QuickFunctions.js",
+  "author": "KazutoKashima",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KazutoKashima/QuickFunctions.git"
+  },
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "mysql": "^2.18.1"
+  },
+  "bugs": {
+    "url": "https://github.com/KazutoKashima/QuickFunctions/issues"
+  },
+  "homepage": "https://github.com/KazutoKashima/QuickFunctions#readme",
+  "scripts": {
+    "test": "node QuickFunctions.js"
+  }
+}
