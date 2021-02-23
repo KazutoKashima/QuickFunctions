@@ -3,14 +3,19 @@
 A module designed to take less time in rewriting functions basic functions for JavaScript!
 It can be used across multiple JavaScript frameworks (since they all work the same, practically) and most libraries you're developing, whatever for!
 
+*** Recent Update:
+- `Removed useless asyncs`
+- `Fixed README typo`
+- `Added Test file and organised the file layout`
+
 Currently supports the following functions:
 
 ### **Timeout and Interval functions**
 
-- `timeout()` - *written as `setCommandTimeout(function, time)`*
-- `clearTimeout()` - *written as `clearCommandTimeout(function)`*
-- `setInterval()` - *written as `setCommandInterval(function, time)`*
-- `clearInterval()` - *written as `clearCommandInterval(function)`*
+- `timeout()` - *now can be used as `setTime(function, time)`*
+- `clearTimeout()` - *now can be used as `clsTime(function)`*
+- `setInterval()` - *now can be used as `interval(function, time)`*
+- `clearInterval()` - *now can be used as `clsInter(function)`*
 
 ---
 
@@ -20,8 +25,14 @@ Currently supports the following functions:
 
 ### **Regular Expressions (RegEx/p) functions**
 
-- `RegLettersAll(input)` - *Regular Expressions for all English Letters*
-- `RegNumbersAll(input)` - *Regular Expressions for all numeric characters*
+- `RegLetAll(input)` - *Regular Expressions for all English Letters*
+- `RegNumbAll(input)` - *Regular Expressions for all numeric characters*
+
+---
+
+### **BETA ARRAY BUFFER TO IMAGE**
+
+- `buffToImg(arrayBuffer)` - *WARNING - MAY OR MAY NOT WORK; This is beta so it's subject to change or removal*
 
 ---
 
